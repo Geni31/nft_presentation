@@ -1,0 +1,20 @@
+{
+  "name": "Jaguar E-Type",
+  "description": "Often regarded as one of the most beautiful cars ever made, known for its sleek design and performance.",
+  "image": "ipfs://QmcW3DQ4yBv7teKoSRhFdp8sGXfs4BtAmByRnsHucLms2f/8.jpg",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Black with number 8 in white circle"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Year Created",
+      "value": "2024"
+    }
+  ]
+}
+

@@ -1,0 +1,20 @@
+{
+  "name": "Nissan Skyline GT-R (R34)",
+  "description": "Iconic JDM sports car, known for its performance and presence in racing culture.",
+  "image": "ipfs://QmcW3DQ4yBv7teKoSRhFdp8sGXfs4BtAmByRnsHucLms2f/11.jpg",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Year Created",
+      "value": "2024"
+    }
+  ]
+}
+

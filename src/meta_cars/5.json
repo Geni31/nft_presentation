@@ -1,0 +1,20 @@
+{
+  "name": "McLaren P1",
+  "description": "A groundbreaking hybrid supercar, celebrated for its speed and innovative technology.",
+  "image": "ipfs://QmcW3DQ4yBv7teKoSRhFdp8sGXfs4BtAmByRnsHucLms2f/5.jpg",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Year Created",
+      "value": "2024"
+    }
+  ]
+}
+

@@ -1,0 +1,20 @@
+{
+  "name": "Chevrolet Camaro (1969) SS",
+  "description": "An aggressive muscle car known for its performance and classic styling.",
+  "image": "ipfs://QmcW3DQ4yBv7teKoSRhFdp8sGXfs4BtAmByRnsHucLms2f/3.jpg",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Year Created",
+      "value": "2024"
+    }
+  ]
+}
+

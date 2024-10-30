@@ -1,0 +1,20 @@
+{
+  "name": "Dodge Charger (1969)",
+  "description": "Iconic American muscle car with a bold design and powerful performance.",
+  "image": "ipfs://QmcW3DQ4yBv7teKoSRhFdp8sGXfs4BtAmByRnsHucLms2f/9.jpg",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Year Created",
+      "value": "2024"
+    }
+  ]
+}
+

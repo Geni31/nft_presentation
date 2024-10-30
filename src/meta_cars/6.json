@@ -1,0 +1,20 @@
+{
+  "name": "Mercedes-Benz 300SL Gullwing",
+  "description": "An iconic sports car with unique gullwing doors and a rich racing heritage.",
+  "image": "ipfs://QmcW3DQ4yBv7teKoSRhFdp8sGXfs4BtAmByRnsHucLms2f/6.jpg",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Silver"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Year Created",
+      "value": "2024"
+    }
+  ]
+}
+

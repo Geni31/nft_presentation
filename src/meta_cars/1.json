@@ -1,0 +1,20 @@
+{
+  "name": "Porsche 911 GT3 RS",
+  "description": "High-performance variant of the classic 911, celebrated for its handling and track capabilities.",
+  "image": "ipfs://QmcW3DQ4yBv7teKoSRhFdp8sGXfs4BtAmByRnsHucLms2f/1.jpg",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Year Created",
+      "value": "2024"
+    }
+  ]
+}
+

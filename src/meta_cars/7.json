@@ -1,0 +1,20 @@
+{
+  "name": "Shelby Cobra",
+  "description": "A legendary American sports car known for its lightweight design and powerful engine.",
+  "image": "ipfs://QmcW3DQ4yBv7teKoSRhFdp8sGXfs4BtAmByRnsHucLms2f/7.jpg",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Blue with two white stripes on bonnet"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Year Created",
+      "value": "2024"
+    }
+  ]
+}
+

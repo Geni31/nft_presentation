@@ -1,0 +1,20 @@
+{
+  "name": "BMW 507",
+  "description": "A stunning roadster with elegant lines, representing BMW's classic luxury and performance.",
+  "image": "ipfs://QmcW3DQ4yBv7teKoSRhFdp8sGXfs4BtAmByRnsHucLms2f/10.jpg",
+  "attributes": [
+    {
+      "trait_type": "Color",
+      "value": "Silver"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Year Created",
+      "value": "2024"
+    }
+  ]
+}
+
