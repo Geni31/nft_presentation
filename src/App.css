@@ -105,10 +105,11 @@ html, body {
 
 .minted-nfts {
   display: grid; /* Use grid layout */
-  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px; /* Space between grid items */
   margin-top: 20px; /* Space above the minted NFTs section */
   width: 100%;
+  justify-items: center;
 }
 
 .nft-item {

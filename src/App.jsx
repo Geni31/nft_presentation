@@ -4,12 +4,11 @@ import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import Web3 from 'web3';
 import nftContract from './nftContract';
 import './App.css';
-
 function App() {
   const [web3, setWeb3] = useState(null);
   const [accounts, setAccounts] = useState([]);
   const [contract, setContract] = useState(null);
-  const [mintAmount, setMintAmount] = useState(1); 
+  const [mintAmount, setMintAmount] = useState(1);
   const [isConnected, setIsConnected] = useState(false); // New state for connection status
   const [mintedNFTs, setMintedNFTs] = useState([]); // State to store minted NFTs
 
@@ -19,15 +18,11 @@ function App() {
       try {
         const web3Instance = new Web3(window.ethereum);
         setWeb3(web3Instance);
-
         const accounts = await web3Instance.eth.requestAccounts();
         setAccounts(accounts);
-
         const instance = nftContract(web3Instance);
         setContract(instance);
-
         setIsConnected(true); // Set connection status to true after successful connection
-
       } catch (error) {
         console.error(error);
       }
@@ -35,6 +30,7 @@ function App() {
       console.error('Web3 not found');
     }
   };
+
 
   const promptForMintAmount = () => {
     const userAmount = prompt("Enter the number of NFTs you want to mint:", mintAmount);
@@ -44,28 +40,31 @@ function App() {
     } else {
       setMintAmount(parsedAmount);
     }
-  }; 
+  };
+
 
   const mint = async () => {
         try {
-            const costPerNFT = Web3.utils.toWei('0.05', 'ether');
-            const totalCost = (costPerNFT * mintAmount).toString();
-
+          const costPerNFT = BigInt(Web3.utils.toWei('0.000005', 'ether'));
+          const totalCost = costPerNFT * BigInt(mintAmount);
+          const gasLimit = BigInt(5000000);
+          const gasPrice = BigInt(await web3.eth.getGasPrice()); // Get the current gas price
+                    // Calculate total cost including gas
+            const estimatedGasFee = gasLimit * gasPrice;
+            const totalWithGas = (totalCost + estimatedGasFee).toString();
             await contract.methods.mint(accounts[0], mintAmount).send({
                 from: accounts[0],
                 value: totalCost,
+                gas: parseInt(gasLimit.toString()),
             });
-
             const supplyAfterMint = await contract.methods.totalSupply().call();
             console.log("Supply After Mint:", supplyAfterMint);
-
             const newMintedNFTs = [];
             for (let i = 0; i < mintAmount; i++) {
                 const tokenId = parseInt(supplyAfterMint) - i;
                 const metadata = await fetchTokenMetadata(tokenId);
-                newMintedNFTs.push(metadata);
+                newMintedNFTs.push({ tokenId, ...metadata });
             }
-
             setMintedNFTs(prevNFTs => [...prevNFTs, ...newMintedNFTs]);
         } catch (error) {
             console.error("Minting failed!", error);
@@ -84,7 +83,6 @@ function App() {
   };
 
 
-
   const fetchTokenMetadata = async (tokenId) => {
     const response = await fetch(`https://gateway.pinata.cloud/ipfs/QmevFgzoo9cEfTXs6YUEbZNAwjp9LTT9f5h1vgea5N9AqY/${tokenId}.json`);
     console.log(response);
@@ -92,12 +90,10 @@ function App() {
       throw new Error('Network response was not ok');
     }
     const metadata = await response.json();
-
     // Convert IPFS image URL to HTTP URL
     if (metadata.image.startsWith("ipfs://")) {
       metadata.image = `https://gateway.pinata.cloud/ipfs/${metadata.image.split('ipfs://')[1]}`;
     }
-
     console.log(metadata);
     return metadata; // Returns the entire metadata object
   };
@@ -117,20 +113,17 @@ function App() {
              <button onClick={mint} className="mint-button">Mint {mintAmount} NFT(s)</button>
              {/* Display minted NFTs */}
              <div className="minted-nfts">
-                 {mintedNFTs.length > 0 ? (
-                     <div className="nft-grid">
-                         {mintedNFTs.map((nft, index) => (
-                             <div key={index} className="nft-item">
-                                 <img src={nft.image} alt={nft.name} className="nft-image" />
-                                 <h3>{nft.name}</h3>
-                             </div>
-                         ))}
-                     </div>
-                 ) : (
-                     <p>No NFTs minted yet.</p>
-                 )}
+               {mintedNFTs.length > 0 ? (
+                 mintedNFTs.map((nft, index) => (
+                   <div key={index} className="nft-item">
+                     <img src={nft.image} alt={nft.name} className="nft-image" />
+                     <h3>{nft.tokenId}. {nft.name} </h3>
+                   </div>
+                 ))
+               ) : (
+                 <p>No NFTs minted yet.</p>
+               )}
              </div>
-
            </div>
          </div>
        ) : (
@@ -141,6 +134,4 @@ function App() {
      </div>
    );
  }
-
-
   export default App;
